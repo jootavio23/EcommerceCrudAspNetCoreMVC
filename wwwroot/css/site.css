@@ -4,7 +4,7 @@ html {
 
 @media (min-width: 768px) {
     html {
-        font-size: 16px;
+        background-color: #ffffff;
     }
 }
 
@@ -19,10 +19,8 @@ html {
 
 body {
     margin-bottom: 60px;
-    background: linear-gradient( rgba(10,10,30,0.9), rgba(10,10,30,0.9) ), url('/images/robots-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
+    background: #ffffff !important; /* Força o fundo branco */
+    color: #000000; /* Ajuste automático para o texto ser visível no branco */
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -41,10 +39,9 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient( rgba(10,10,30,0.9), rgba(10,10,30,0.9) ), url('/images/robots-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
+    /* Alteração para fundo branco */
+    background: #ffffff !important;
+    color: #000000 !important;
 }
 
 .hero-title {
@@ -53,7 +50,7 @@ body {
 }
 
 .brand {
-    color: #00e5ff;
+    color: #1a73e8;
     text-shadow: 0 0 5px #00e5ff, 0 0 15px #00e5ff, 0 0 30px #00e5ff;
 }
 
@@ -73,8 +70,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
-    opacity: 0.95;
+    z-index: 0; /* Fica atrás do texto */
+    opacity: 0.4; /* Ajuste aqui a transparência (0.1 a 1.0) */
 }
 
 .hero-ai-text {
@@ -296,6 +293,7 @@ body {
     border: 1px solid rgba(0,255,255,0.3);
     box-shadow: 0 0 25px rgba(0,255,255,0.15);
     text-align: center;
+    color: black;
 }
 
 .about-title {
@@ -344,24 +342,26 @@ body {
 }
 
 .feedback-card {
-    background: rgba(10,15,40,0.75);
+    background: #4a4e5a !important; /* Cinza azulado escuro */
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid rgba(0,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
     transition: 0.3s;
+    color: #ffffff !important; /* Garante que o texto continue legível */
 }
 
     .feedback-card:hover {
+        background: #575c6b !important; /* Cinza um pouco mais claro no hover */
         transform: translateY(-5px);
-        box-shadow: 0 0 20px rgba(0,255,255,0.4);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
 .feedback-img {
     width: 80px; /* Define uma largura fixa */
     height: 80px; /* Define uma altura fixa */
-    object-fit: cover; /* Garante que a imagem n�o fique esticada */
+    object-fit: cover; /* Garante que a imagem não fique esticada */
     border-radius: 50%; /* Deixa a imagem redonda (opcional) */
-    margin-bottom: 15px; /* Cria um espa�o entre a imagem e o texto */
+    margin-bottom: 15px; /* Cria um espaço entre a imagem e o texto */
 }
 
 .about-card {
@@ -372,19 +372,19 @@ body {
 
 /* Alinhamento Lado a Lado */
 .content-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    margin-bottom: 40px;
-    text-align: left;
+    display: flex !important;
+    flex-direction: row !important; /* Imagem de um lado, texto do outro */
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
 }
-
 .side-img {
-    width: 250px;
-    border-radius: 8px;
+    width: 450px !important; /* Tamanho padronizado */
+    height: 300px !important;
+    object-fit: cover !important;
+    border-radius: 15px;
 }
-
-/* T�tulos azuis */
+/* Títulos azuis */
 .about-title, .section-title {
     color: #1a73e8;
     text-decoration: underline;
@@ -393,38 +393,49 @@ body {
 
 /* Destaques em azul claro */
 .highlight {
-    color: #34a853; /* Ou a cor espec�fica da sua imagem */
+    color: #34a853; /* Ou a cor específica da sua imagem */
     font-weight: bold;
 }
 
 /* Grade da Equipe */
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
+    display: flex !important;
+    flex-direction: row !important; /* Força ficar um ao lado do outro */
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .member {
     text-align: center;
+    color: #000000;
+    font-weight: bold;
 }
-
     .member img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%; /* Fotos redondas */
-        object-fit: cover;
-        border: 3px solid #1a73e8;
+        width: 130px; /* Tamanho igual para todos os círculos */
+        height: 130px; /* Deve ser igual à largura para ser círculo perfeito */
+        border-radius: 50%; /* Faz o formato circular */
+        object-fit: cover; /* Não deixa o rosto da pessoa esticar */
+        border: 3px solid #1a73e8; /* Borda azul opcional */
+        margin-bottom: 10px;
+    }
+    .member span {
+        font-size: 14px;
+        font-weight: bold;
+        color: #000000; /* Nome em preto */
+        text-transform: uppercase;
+        text-align: center;
     }
 /* Container que agrupa Logo + Texto */
 .intro-section {
     display: flex;
     align-items: flex-start; /* Alinha o topo do logo com o topo do texto */
-    gap: 20px; /* Espa�o entre o quadrado do logo e o texto */
+    gap: 20px; /* Espaço entre o quadrado do logo e o texto */
     margin-top: 20px;
 }
 
-/* O quadrado cinza atr�s do logo */
+/* O quadrado cinza atrás do logo */
 .logo-container {
     background-color: #e0e0e0; /* Cinza claro */
     padding: 15px; /* Reduzi um pouco o preenchimento interno */
@@ -433,7 +444,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0; /* Garante que o quadrado n�o mude de tamanho */
+    flex-shrink: 0; /* Garante que o quadrado não mude de tamanho */
     border-radius: 4px; /* Opcional: um leve arredondamento nos cantos */
 }
 
@@ -454,9 +465,9 @@ body {
 /* Container que segura o Logo e o Texto */
 .intro-section {
     display: flex;
-    flex-direction: row; /* For�a um ao lado do outro */
+    flex-direction: row; /* Força um ao lado do outro */
     align-items: flex-start;
-    gap: 20px; /* Espa�o entre a logo e o texto */
+    gap: 20px; /* Espaço entre a logo e o texto */
     width: 100%;
     margin-bottom: 30px;
 }
@@ -465,8 +476,8 @@ body {
 .logo-container {
     background-color: #f0f0f0;
     width: 120px; /* Tamanho pequeno definido aqui */
-    height: 120px; /* Mant�m o quadrado perfeito */
-    flex-shrink: 0; /* N�O deixa o texto esmagar a logo */
+    height: 120px; /* Mantém o quadrado perfeito */
+    flex-shrink: 0; /* NÃO deixa o texto esmagar a logo */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -481,7 +492,7 @@ body {
 
 /* O texto ao lado */
 .intro-text {
-    flex: 1; /* O texto usa todo o resto do espa�o */
+    flex: 1; /* O texto usa todo o resto do espaço */
     text-align: left;
 }
 
@@ -490,3 +501,4 @@ body {
         font-size: 15px;
         line-height: 1.5;
     }
+
